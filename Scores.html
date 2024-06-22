@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Retrieved Data</title>
+</head>
+<body>
+
+<table border="1" align="center" id="dataTable">
+    <thead>
+        <tr>
+            <th>Judge Name</th>
+            <th>Team Name</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+fetch('http://localhost:4001/retrieve')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve1')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve2')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve3')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve4')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve5')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve6')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve7')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve8')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve9')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+fetch('http://localhost:4001/retrieve10')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Retrieved Data:', data);
+        displayData(data);
+    })
+    .catch(error => console.error('Error:', error));
+function displayData(data) {
+    var tableBody = document.getElementById("tableBody");
+
+    data.forEach(function (row) {
+        var tr = document.createElement("tr");
+
+        // Assuming column names are 'judgename', 'teamname', 'score'
+        var columns = ['judgename', 'teamname', 'score'];
+
+        columns.forEach(function (column) {
+            var td = document.createElement("td");
+            td.textContent = row[column];
+            tr.appendChild(td);
+        });
+
+        tableBody.appendChild(tr);
+    });
+}
+</script>
+
+</body>
+</html>
